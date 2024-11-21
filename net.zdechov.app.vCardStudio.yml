@@ -1,6 +1,6 @@
 app-id: net.zdechov.app.vCardStudio
 runtime: org.kde.Platform
-runtime-version: '5.15-23.08'
+runtime-version: '5.15-24.08'
 sdk: org.kde.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.freepascal
@@ -24,7 +24,7 @@ modules:
     sources:
       - type: svn
         url: https://svn.zdechov.net/vcard-studio/tags/1.5.0
-        revision: r184
+        revision: r191
     buildsystem: simple
     build-commands:
       - |
@@ -35,6 +35,7 @@ modules:
       - ln -s $FLATPAK_DEST/share/vCardStudio/vCardStudio $FLATPAK_DEST/bin/vCardStudio
       - install -Dm644 Install/flatpak/${FLATPAK_ID}.desktop -t $FLATPAK_DEST/share/applications
       - install -Dm644 "Images/vCard Studio.png" $FLATPAK_DEST/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png
+      - install -Dm644 Images/Profile.png -t $FLATPAK_DEST/share/vCardStudio/Images
       - install -Dm644 Languages/*.po -t $FLATPAK_DEST/share/vCardStudio/Languages
       - install -Dm644 Packages/Common/Languages/*.po -t $FLATPAK_DEST/share/vCardStudio/Languages
       - install -Dm644 Packages/VCard/Languages/*.po -t $FLATPAK_DEST/share/vCardStudio/Languages
